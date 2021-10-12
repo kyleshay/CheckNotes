@@ -1,0 +1,14 @@
+name: "Validate Notes"
+description: "Check if the PR contains `Notes: <details|None>`"
+inputs:
+  repo-token:
+    description: "The GitHub token"
+    required: false
+    default: ${{ github.token }}
+  comment:
+    description: "Leave a comment with information about `Notes:`"
+    required: false
+    default: false
+runs:
+  using: "node12"
+  main: "index.js"

@@ -1,0 +1,14 @@
+on:
+  pull_request:
+    types: [opened, edited]
+
+jobs:
+  notes_job:
+    runs-on: ubuntu-latest
+    name: "Check PR for Notes"
+    steps:
+      - name: "Read PR body description"
+        id: check
+        uses: kyleshay/CheckNotes@master
+        with:
+          comment: false
